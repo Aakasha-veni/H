@@ -1,6 +1,16 @@
-# To find the Leap year
-y=2000
-if(y%4==0):
-  print("{} is Leap Year".format(y))
-else:
-    print("{} is Not a Leap Year".format(y))
+class Player:
+   def play(self):
+     print("The player is playing cricket")
+class Batsman(Player):
+   def play(self):
+     print("The batsman is batting")
+class Bowler(Player):
+   def play(self):
+    print("The bowler is bowling")
+batsman=Batsman()
+bowler=Bowler()
+batsman.play()
+bowler.play()
+
+    
+  

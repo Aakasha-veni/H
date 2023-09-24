@@ -1,9 +1,31 @@
-#Finding Factorial 
-def fact(n):
-  if n==0 or n==1:
-    return 1
-  else:
-    return n*fact(n-1)
-number=5
-result=fact(number)
-print("The factorial of {} is {} ".format(number,result))
+class BankAccount:
+  def initial(self,account_number,account_holder_name,initial_balance=0.0):
+    self.__account_number = account_number
+    self.__account_holder_name = account_holder_name
+    self.__account_balance = initial_balance
+
+  def deposit(self,amount):
+    if amount>0:
+      self.__account_balance += amount
+      print("Deposited Rs.{}. Now balance: Rs.{} ".format(amount,self.__account_balance))
+    else:  
+      print("Invalid deposit")
+
+  def withdraw(self,amount):
+    if amount>0 and amount<=self.__account_balance:
+      self.__account_balance -= amount
+      print("Withdraw Rs.{}. Now balance: Rs.{} ".format(amount,self.__account_balance))
+    else: 
+       print("Invalid withdraw or amoint insufficient")
+
+  def display(self):
+    print("Account Holder:{}. Account Number:{}. Account Balance:{}".format(self.__account_holder_name,self.__account_number,self.__account_balance))
+
+
+account = BankAccount()
+
+account.initial(account_number="6379697038",account_holder_name="Mallika",initial_balance=6000.0)
+account.display()
+account.deposit(2000)
+account.withdraw(1000)
+account.display()
